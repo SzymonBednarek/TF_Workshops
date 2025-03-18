@@ -1,0 +1,250 @@
+name: tasty_bytes
+description: A nice taste!
+tables:
+  - name: CUSTOMER_LOYALTY_METRICS_V
+    base_table:
+      database: TB_101
+      schema: ANALYTICS
+      table: CUSTOMER_LOYALTY_METRICS_V
+    dimensions:
+      - name: CITY
+        expr: CITY
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: COUNTRY
+        expr: COUNTRY
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: FIRST_NAME
+        expr: FIRST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: LAST_NAME
+        expr: LAST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: PHONE_NUMBER
+        expr: PHONE_NUMBER
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: E_MAIL
+        expr: E_MAIL
+        data_type: VARCHAR(16777216)
+        description: ''
+    facts:
+      - name: CUSTOMER_ID
+        expr: CUSTOMER_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: TOTAL_SALES
+        expr: TOTAL_SALES
+        data_type: NUMBER(38,4)
+        description: ''
+  - name: ORDERS_V
+    base_table:
+      database: TB_101
+      schema: ANALYTICS
+      table: ORDERS_V
+    dimensions:
+      - name: TRUCK_BRAND_NAME
+        expr: TRUCK_BRAND_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: MENU_TYPE
+        expr: MENU_TYPE
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: PRIMARY_CITY
+        expr: PRIMARY_CITY
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: REGION
+        expr: REGION
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: COUNTRY
+        expr: COUNTRY
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: FRANCHISEE_FIRST_NAME
+        expr: FRANCHISEE_FIRST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: FRANCHISEE_LAST_NAME
+        expr: FRANCHISEE_LAST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: FIRST_NAME
+        expr: FIRST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: LAST_NAME
+        expr: LAST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: E_MAIL
+        expr: E_MAIL
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: PHONE_NUMBER
+        expr: PHONE_NUMBER
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: CHILDREN_COUNT
+        expr: CHILDREN_COUNT
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: GENDER
+        expr: GENDER
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: MARITAL_STATUS
+        expr: MARITAL_STATUS
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: MENU_ITEM_NAME
+        expr: MENU_ITEM_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: ORDER_TAX_AMOUNT
+        expr: ORDER_TAX_AMOUNT
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: ORDER_DISCOUNT_AMOUNT
+        expr: ORDER_DISCOUNT_AMOUNT
+        data_type: VARCHAR(16777216)
+        description: ''
+    time_dimensions:
+      - name: DATE
+        expr: DATE
+        data_type: DATE
+        description: ''
+      - name: ORDER_TS
+        expr: ORDER_TS
+        data_type: TIMESTAMP_NTZ(9)
+        description: ''
+    facts:
+      - name: ORDER_ID
+        expr: ORDER_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: TRUCK_ID
+        expr: TRUCK_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: ORDER_DETAIL_ID
+        expr: ORDER_DETAIL_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: LINE_NUMBER
+        expr: LINE_NUMBER
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: FRANCHISE_FLAG
+        expr: FRANCHISE_FLAG
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: FRANCHISE_ID
+        expr: FRANCHISE_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: LOCATION_ID
+        expr: LOCATION_ID
+        data_type: NUMBER(19,0)
+        description: ''
+      - name: CUSTOMER_ID
+        expr: CUSTOMER_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: MENU_ITEM_ID
+        expr: MENU_ITEM_ID
+        data_type: NUMBER(38,0)
+        description: ''
+      - name: QUANTITY
+        expr: QUANTITY
+        data_type: NUMBER(5,0)
+        description: ''
+      - name: UNIT_PRICE
+        expr: UNIT_PRICE
+        data_type: NUMBER(38,4)
+        description: ''
+      - name: PRICE
+        expr: PRICE
+        data_type: NUMBER(38,4)
+        description: ''
+      - name: ORDER_AMOUNT
+        expr: ORDER_AMOUNT
+        data_type: NUMBER(38,4)
+        description: ''
+      - name: ORDER_TOTAL
+        expr: ORDER_TOTAL
+        data_type: NUMBER(38,4)
+        description: ''
+  - name: CUSTOMER_LOYALTY
+    base_table:
+      database: TB_101
+      schema: RAW_CUSTOMER
+      table: CUSTOMER_LOYALTY
+    dimensions:
+      - name: FIRST_NAME
+        expr: FIRST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: LAST_NAME
+        expr: LAST_NAME
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: CITY
+        expr: CITY
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: COUNTRY
+        expr: COUNTRY
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: POSTAL_CODE
+        expr: POSTAL_CODE
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: PREFERRED_LANGUAGE
+        expr: PREFERRED_LANGUAGE
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: GENDER
+        expr: GENDER
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: FAVOURITE_BRAND
+        expr: FAVOURITE_BRAND
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: MARITAL_STATUS
+        expr: MARITAL_STATUS
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: CHILDREN_COUNT
+        expr: CHILDREN_COUNT
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: E_MAIL
+        expr: E_MAIL
+        data_type: VARCHAR(16777216)
+        description: ''
+      - name: PHONE_NUMBER
+        expr: PHONE_NUMBER
+        data_type: VARCHAR(16777216)
+        description: ''
+    time_dimensions:
+      - name: SIGN_UP_DATE
+        expr: SIGN_UP_DATE
+        data_type: DATE
+        description: ''
+      - name: BIRTHDAY_DATE
+        expr: BIRTHDAY_DATE
+        data_type: DATE
+        description: ''
+    facts:
+      - name: CUSTOMER_ID
+        expr: CUSTOMER_ID
+        data_type: NUMBER(38,0)
+        description: ''
