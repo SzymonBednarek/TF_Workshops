@@ -1,0 +1,216 @@
+name: covid
+tables:
+  - name: WHO_DAILY_REPORT
+    base_table:
+      database: COVID19_EPIDEMIOLOGICAL_DATA
+      schema: PUBLIC
+      table: WHO_DAILY_REPORT
+    dimensions:
+      - name: COUNTRY_REGION
+        expr: COUNTRY_REGION
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - Americas
+          - Western Pacific
+      - name: ISO3166_1
+        expr: ISO3166_1
+        data_type: VARCHAR(2)
+        sample_values:
+          - ZA
+          - GB
+      - name: TRANSMISSION_CLASSIFICATION
+        expr: TRANSMISSION_CLASSIFICATION
+        data_type: VARCHAR(16777216)
+    time_dimensions:
+      - name: DATE
+        expr: DATE
+        data_type: TIMESTAMP_NTZ
+        sample_values:
+          - '2023-12-13T00:00:00Z'
+    facts:
+      - name: CASES
+        expr: CASES
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '6985964'
+          - '1144877'
+          - '121877'
+      - name: CASES_TOTAL
+        expr: CASES_TOTAL
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '9906'
+          - '31250'
+          - '6751'
+      - name: CASES_TOTAL_PER_100000
+        expr: CASES_TOTAL_PER_100000
+        data_type: FLOAT
+        sample_values:
+          - '1458'
+          - '0'
+          - '53'
+      - name: DEATHS
+        expr: DEATHS
+        data_type: NUMBER(38, 0)
+      - name: DEATHS_TOTAL
+        expr: DEATHS_TOTAL
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '90'
+          - '346'
+          - '8'
+      - name: DEATHS_TOTAL_PER_100000
+        expr: DEATHS_TOTAL_PER_100000
+        data_type: FLOAT
+        sample_values:
+          - '26'
+          - '0'
+          - '2'
+  - name: COVID19_EPIDEMIOLOGICAL_DATA_PUBLIC_WHO_TIMESERIES
+    base_table:
+      database: COVID19_EPIDEMIOLOGICAL_DATA
+      schema: PUBLIC
+      table: WHO_TIMESERIES
+    dimensions:
+      - name: COUNTRY_REGION
+        expr: COUNTRY_REGION
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - Global
+          - United States
+          - India
+      - name: ISO3166_1
+        expr: ISO3166_1
+        data_type: VARCHAR(2)
+        sample_values:
+          - US
+          - IN
+      - name: TRANSMISSION_CLASSIFICATION
+        expr: TRANSMISSION_CLASSIFICATION
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - Community transmission
+          - Clusters of cases
+    time_dimensions:
+      - name: DATE
+        expr: DATE
+        data_type: TIMESTAMP_NTZ
+        sample_values:
+          - '2021-02-27T00:00:00Z'
+    facts:
+      - name: CASES
+        expr: CASES
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '427644'
+          - '73477'
+          - '16577'
+      - name: CASES_TOTAL
+        expr: CASES_TOTAL
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '112649371'
+          - '28028815'
+          - '11063491'
+      - name: CASES_TOTAL_PER_100000
+        expr: CASES_TOTAL_PER_100000
+        data_type: FLOAT
+        sample_values:
+          - '1443.055188193'
+          - '8467.85'
+          - '801.7'
+      - name: DEATHS
+        expr: DEATHS
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '10093'
+          - '2397'
+          - '120'
+      - name: DEATHS_TOTAL
+        expr: DEATHS_TOTAL
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '2501229'
+          - '501414'
+          - '5503'
+      - name: DEATHS_TOTAL_PER_100000
+        expr: DEATHS_TOTAL_PER_100000
+        data_type: FLOAT
+        sample_values:
+          - '32.041115306'
+          - '151.48'
+          - '11.36'
+  - name: COVID19_EPIDEMIOLOGICAL_DATA_PUBLIC_WHO_TIMESERIES
+    base_table:
+      database: COVID19_EPIDEMIOLOGICAL_DATA
+      schema: PUBLIC
+      table: WHO_TIMESERIES
+    dimensions:
+      - name: COUNTRY_REGION
+        expr: COUNTRY_REGION
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - Global
+          - United States
+          - India
+      - name: ISO3166_1
+        expr: ISO3166_1
+        data_type: VARCHAR(2)
+        sample_values:
+          - US
+          - IN
+      - name: TRANSMISSION_CLASSIFICATION
+        expr: TRANSMISSION_CLASSIFICATION
+        data_type: VARCHAR(16777216)
+        sample_values:
+          - Community transmission
+          - Clusters of cases
+    time_dimensions:
+      - name: DATE
+        expr: DATE
+        data_type: TIMESTAMP_NTZ
+        sample_values:
+          - '2021-02-27T00:00:00Z'
+    facts:
+      - name: CASES
+        expr: CASES
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '427644'
+          - '73477'
+          - '16577'
+      - name: CASES_TOTAL
+        expr: CASES_TOTAL
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '112649371'
+          - '28028815'
+          - '11063491'
+      - name: CASES_TOTAL_PER_100000
+        expr: CASES_TOTAL_PER_100000
+        data_type: FLOAT
+        sample_values:
+          - '1443.055188193'
+          - '8467.85'
+          - '801.7'
+      - name: DEATHS
+        expr: DEATHS
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '10093'
+          - '2397'
+          - '120'
+      - name: DEATHS_TOTAL
+        expr: DEATHS_TOTAL
+        data_type: NUMBER(38, 0)
+        sample_values:
+          - '2501229'
+          - '501414'
+          - '5503'
+      - name: DEATHS_TOTAL_PER_100000
+        expr: DEATHS_TOTAL_PER_100000
+        data_type: FLOAT
+        sample_values:
+          - '32.041115306'
+          - '151.48'
+          - '11.36'
